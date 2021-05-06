@@ -13,8 +13,7 @@ export const useColors = () => {
 
   const generateRandomColor = () => {
     const color = `rgb(${generateNumber()}, ${generateNumber()}, ${generateNumber()})`; 
-    
-    console.log(forbiddenColors);
+
       if(!forbiddenColors.some(forbidden => forbidden === color)){
         forbiddenColors.push(color);
         return color;

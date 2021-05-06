@@ -5,17 +5,11 @@ import { useColors } from "./useColors";
 export const GenerateCards = () => {
   const { generateRandomColor } = useColors();
 
-  const colors = [
-    generateRandomColor(),
-    generateRandomColor(),
-    generateRandomColor(),
-    generateRandomColor(),
-    generateRandomColor(),
-    generateRandomColor(),
-    generateRandomColor(),
-    generateRandomColor(),
-    generateRandomColor()
-  ]
+  const colors = []
+
+  while(colors.length < 9){
+    colors.push(generateRandomColor());
+  }
 
   const cards = [
     {

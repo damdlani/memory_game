@@ -17,7 +17,7 @@ export const StyledCard = styled.button`
     return color;
   }};
   border: 2px solid rgb(255, 255, 255);
-  /* transition: background 0.3s ease; */
+  transition: 0.3s ease;
 
   :hover {
     cursor: ${({ off, covered }) => {
