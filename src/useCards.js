@@ -3,7 +3,7 @@ import { GenerateCards } from "./cards";
 import { twoCardsUncoveredTime } from "./utils";
 
 export const useCards = () => {
-  const [cards, setCards] = useState(GenerateCards());
+  const [cards, setCards] = useState(GenerateCards(18));
   const [activeCards, setActiveCards] = useState([]);
   const [clickCount, setClickCount] = useState(0);
 
