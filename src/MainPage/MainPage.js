@@ -7,18 +7,22 @@ import { presentationTime } from "../utils";
 import { Result } from "./Result";
 
 export const MainPage = () => {
-  const { cards, setCards, updateActiveCards } = useCards();
+  const {
+    cards,
+    setCards,
+    updateActiveCards,
+    clickCount,
+    setClickCount,
+  } = useCards();
   const { getEndDate, calculateTime } = useTime();
   const [finished, setFinished] = useState(false);
 
   useEffect(() => {
-    if(!cards.some(({off}) => off === false)){
+    if (!cards.some(({ off }) => off === false)) {
       getEndDate();
       setFinished(true);
     }
   }, [cards]);
-
-
 
   useEffect(() => {
     setTimeout(() => {
@@ -30,20 +34,18 @@ export const MainPage = () => {
     }, presentationTime);
   }, []);
 
-
-    return (
-      <StyledBoard>
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            card={card}
-            updateActiveCards={updateActiveCards}
-            setCards={setCards}
-          ></Card>
-        ))}
-        {finished && <Result time={calculateTime()}/>}
-      </StyledBoard>
-    );
-
-
+  return (
+    <StyledBoard>
+      {cards.map((card) => (
+        <Card
+          key={card.id}
+          card={card}
+          updateActiveCards={updateActiveCards}
+          setCards={setCards}
+          setClickCount={setClickCount}
+        ></Card>
+      ))}
+      {finished && <Result time={calculateTime()} clickCount={clickCount} />}
+    </StyledBoard>
+  );
 };

@@ -5,6 +5,7 @@ export const Card = ({
   card,
   setCards,
   updateActiveCards,
+  setClickCount
 }) => {
   const { color, covered, off, blocked, id } = card;
 
@@ -25,6 +26,8 @@ export const Card = ({
   const onClickHandle = () => {
     updateCards();
     updateActiveCards(card);
+    setClickCount(count => count + 1);
+    
   };
 
   return (

@@ -5,7 +5,7 @@ import { twoCardsUncovered } from "./utils";
 export const useCards = () => {
   const [cards, setCards] = useState(cardList);
   const [activeCards, setActiveCards] = useState([]);
-
+  const [clickCount, setClickCount] = useState(0);
 
   const blockCardsWhileComparing = () => {
     if (activeCards.length === 2) {
@@ -28,7 +28,7 @@ export const useCards = () => {
       })
     );
   };
-  
+
   const coverNotPairedCards = () => {
     setCards((cards) =>
       cards.map((card) => {
@@ -76,5 +76,7 @@ export const useCards = () => {
     setCards,
     activeCards,
     updateActiveCards,
+    clickCount,
+    setClickCount,
   };
 };
