@@ -1,2 +1,2 @@
 export const presentationTime = 1000;
-export const twoCardsUncovered = 200;
+export const twoCardsUncoveredTime = 200;

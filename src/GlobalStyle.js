@@ -12,7 +12,6 @@ export const GlobalStyle = createGlobalStyle`
     } 
     body {
         font-family: 'Roboto';
-        background-color: wheat;
 
     }
 `;

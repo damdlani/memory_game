@@ -1,135 +1,152 @@
 import { nanoid } from "nanoid";
 import { shuffleArray } from "./shuffleArray";
+import { useColors } from "./useColors";
 
-const cards = [
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "gray",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "lightgreen",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "brown",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "purple",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "lightgreen",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "violet",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "brown",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "violet",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "purple",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "gray",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "pink",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "yellow",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "pink",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "yellow",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "blue",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "red",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "red",
-  },
-  {
-    id: nanoid(),
-    covered: false,
-    off: false,
-    blocked: false,
-    color: "blue",
-  },
-];
+export const GenerateCards = () => {
+  const { generateRandomColor } = useColors();
 
-shuffleArray(cards);
+  const colors = [
+    generateRandomColor(),
+    generateRandomColor(),
+    generateRandomColor(),
+    generateRandomColor(),
+    generateRandomColor(),
+    generateRandomColor(),
+    generateRandomColor(),
+    generateRandomColor(),
+    generateRandomColor()
+  ]
 
-export default cards;
+  const cards = [
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[0],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[0],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[1],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[1],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[2],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[2],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[3],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[3],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[4],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[4],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[5],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[5],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[6],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[6],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[7],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[7],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[8],
+    },
+    {
+      id: nanoid(),
+      covered: false,
+      off: false,
+      blocked: false,
+      color: colors[8],
+    },
+  ];
+  
+  shuffleArray(cards);
+
+  return cards;
+}

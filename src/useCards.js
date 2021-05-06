@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import cardList from "./cards";
-import { twoCardsUncovered } from "./utils";
+import { GenerateCards } from "./cards";
+import { twoCardsUncoveredTime } from "./utils";
 
 export const useCards = () => {
-  const [cards, setCards] = useState(cardList);
+  const [cards, setCards] = useState(GenerateCards());
   const [activeCards, setActiveCards] = useState([]);
   const [clickCount, setClickCount] = useState(0);
 
@@ -46,14 +46,14 @@ export const useCards = () => {
     if (activeCards[0].color === activeCards[1].color) {
       setTimeout(() => {
         markPairedCardsOff();
-      }, twoCardsUncovered);
+      }, twoCardsUncoveredTime);
       setActiveCards([]);
     }
 
     if (activeCards[0].color !== activeCards[1].color) {
       setTimeout(() => {
         coverNotPairedCards();
-      }, twoCardsUncovered);
+      }, twoCardsUncoveredTime);
 
       setActiveCards([]);
     }
