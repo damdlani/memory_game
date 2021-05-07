@@ -8,6 +8,8 @@ export const StyledBoard = styled.main`
 `;
 
 export const StyledCard = styled.button`
+  font-size: 40px;
+  color: white;
   flex-basis: 15%;
   flex-grow: 1;
   height: 30vh;

@@ -28,7 +28,7 @@ export const MainPage = () => {
     setTimeout(() => {
       setCards((cards) =>
         cards.map((card) => {
-          return { ...card, covered: false };
+          return { ...card, covered: true };
         })
       );
     }, presentationTime);

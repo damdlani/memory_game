@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { StyledCard } from "./styled";
 
-export const Card = ({
-  card,
-  setCards,
-  updateActiveCards,
-  setClickCount
-}) => {
+export const Card = ({ card, setCards, updateActiveCards, setClickCount }) => {
   const { color, covered, off, blocked, id } = card;
 
   const updateCards = () => {
@@ -26,8 +21,7 @@ export const Card = ({
   const onClickHandle = () => {
     updateCards();
     updateActiveCards(card);
-    setClickCount(count => count + 1);
-    
+    setClickCount((count) => count + 1);
   };
 
   return (
@@ -37,6 +31,8 @@ export const Card = ({
       off={off}
       disabled={!covered || blocked || off}
       onClick={onClickHandle}
-    ></StyledCard>
+    >
+      {off ? <i class="fas fa-check"></i> : ""}
+    </StyledCard>
   );
 };
