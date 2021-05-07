@@ -1,18 +1,31 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  height: 100vh;
+`;
+
 export const StyledBoard = styled.main`
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 10px;
+  width: 80%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin: 50px auto;
+
+  @media (orientation: portrait) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 export const StyledCard = styled.button`
   font-size: 40px;
-  color: white;
-  flex-basis: 15%;
-  flex-grow: 1;
-  height: 30vh;
+
+  color: ${({ color, off, covered }) => {
+    if (off) return "rgb(255, 255, 255)";
+    if (covered) return `rgb(0, 0, 0)`;
+    return color;
+  }};
+
   background: ${({ color, covered, off }) => {
     if (off) return "rgb(0, 185, 0)";
     if (covered) return `rgb(0, 0, 0)`;
@@ -26,11 +39,5 @@ export const StyledCard = styled.button`
       if (off || !covered) return "not-allowed";
       return "pointer";
     }};
-  }
-
-  @media (orientation: portrait) {
-    flex-basis: 33%;
-    flex-grow: 1;
-    height: 15vh;
   }
 `;

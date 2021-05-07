@@ -1,4 +1,4 @@
-import { StyledBoard } from "./styled";
+import { StyledBoard, Container } from "./styled";
 import { Card } from "./Card";
 import { useEffect, useState } from "react";
 import { useCards } from "../useCards";
@@ -13,7 +13,7 @@ export const MainPage = () => {
     updateActiveCards,
     clickCount,
     setClickCount,
-  } = useCards();
+  } = useCards(18);
   const { getEndDate, calculateTime } = useTime();
   const [finished, setFinished] = useState(false);
 
@@ -35,17 +35,19 @@ export const MainPage = () => {
   }, []);
 
   return (
-    <StyledBoard>
-      {cards.map((card) => (
-        <Card
-          key={card.id}
-          card={card}
-          updateActiveCards={updateActiveCards}
-          setCards={setCards}
-          setClickCount={setClickCount}
-        ></Card>
-      ))}
-      {finished && <Result time={calculateTime()} clickCount={clickCount} />}
-    </StyledBoard>
+    <Container>
+      <StyledBoard>
+        {cards.map((card) => (
+          <Card
+            key={card.id}
+            card={card}
+            updateActiveCards={updateActiveCards}
+            setCards={setCards}
+            setClickCount={setClickCount}
+          ></Card>
+        ))}
+        {finished && <Result time={calculateTime()} clickCount={clickCount} />}
+      </StyledBoard>
+    </Container>
   );
 };

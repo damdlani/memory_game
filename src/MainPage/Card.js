@@ -32,7 +32,7 @@ export const Card = ({ card, setCards, updateActiveCards, setClickCount }) => {
       disabled={!covered || blocked || off}
       onClick={onClickHandle}
     >
-      {off ? <i class="fas fa-check"></i> : ""}
+      <i class="fas fa-check"></i>
     </StyledCard>
   );
 };

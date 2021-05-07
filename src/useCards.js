@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { GenerateCards } from "./cards";
 import { twoCardsUncoveredTime } from "./utils";
 
-export const useCards = () => {
-  const [cards, setCards] = useState(GenerateCards(18));
+export const useCards = (cardsNumber) => {
+  const [cards, setCards] = useState(GenerateCards(cardsNumber));
   const [activeCards, setActiveCards] = useState([]);
   const [clickCount, setClickCount] = useState(0);
 
