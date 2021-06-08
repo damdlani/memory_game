@@ -2,15 +2,18 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   height: 100vh;
+  max-width: 80vw;
+  margin: 0 auto;
+  padding-top: 10px;
 `;
 
 export const StyledBoard = styled.main`
   position: relative;
-  width: 80%;
+  width: 100%;
   height: 80%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  margin: 50px auto;
+  margin: 20px auto;
 
   @media (orientation: portrait) {
     grid-template-columns: repeat(3, 1fr);
@@ -41,3 +44,7 @@ export const StyledCard = styled.button`
     }};
   }
 `;
+export const Nav = styled.nav`
+  text-align: right;
+`;
+

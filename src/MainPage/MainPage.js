@@ -1,20 +1,16 @@
-import { StyledBoard, Container } from "./styled";
+import { StyledBoard, Container, Nav } from "./styled";
 import { Card } from "./Card";
 import { useEffect, useState } from "react";
 import { useCards } from "../useCards";
 import { useTime } from "../useTime";
 import { presentationTime } from "../utils";
 import { Result } from "./Result";
-import { Link } from "react-router-dom";
+import { StyledLink } from "../common/StyledLink";
 
-export const MainPage = ({cardsNumber}) => {
-  const {
-    cards,
-    setCards,
-    updateActiveCards,
-    clickCount,
-    setClickCount,
-  } = useCards(cardsNumber);
+
+export const MainPage = ({ cardsNumber }) => {
+  const { cards, setCards, updateActiveCards, clickCount, setClickCount } =
+    useCards(cardsNumber);
   const { getEndDate, calculateTime } = useTime();
   const [finished, setFinished] = useState(false);
 
@@ -37,7 +33,10 @@ export const MainPage = ({cardsNumber}) => {
 
   return (
     <Container>
-      <Link to="/">Home</Link>
+      <Nav>
+        <StyledLink to="/">Home</StyledLink>
+      </Nav>
+
       <StyledBoard>
         {cards.map((card) => (
           <Card

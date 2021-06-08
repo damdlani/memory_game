@@ -1,19 +1,22 @@
-import { Link } from "react-router-dom";
+import { StyledLink } from "../common/StyledLink";
+import { ListItem, Title, Container, Subtitle } from "./styled";
 
 export const HomePage = () => {
   return (
-    <nav>
+    <Container>
+      <Title>Welcome to Memory game</Title>
+      <Subtitle>Choose level:</Subtitle>
       <ul>
-        <li>
-          <Link to="/easy">Easy</Link>
-        </li>
-        <li>
-          <Link to="/medium">Medium</Link>
-        </li>
-        <li>
-          <Link to="/hard">Hard</Link>
-        </li>
+        <ListItem>
+          <StyledLink to="/easy">Easy</StyledLink>
+        </ListItem>
+        <ListItem>
+          <StyledLink to="/medium">Medium</StyledLink>
+        </ListItem>
+        <ListItem>
+          <StyledLink to="/hard">Hard</StyledLink>
+        </ListItem>
       </ul>
-    </nav>
+    </Container>
   );
 };
