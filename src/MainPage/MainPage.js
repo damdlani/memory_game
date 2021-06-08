@@ -5,15 +5,16 @@ import { useCards } from "../useCards";
 import { useTime } from "../useTime";
 import { presentationTime } from "../utils";
 import { Result } from "./Result";
+import { Link } from "react-router-dom";
 
-export const MainPage = () => {
+export const MainPage = ({cardsNumber}) => {
   const {
     cards,
     setCards,
     updateActiveCards,
     clickCount,
     setClickCount,
-  } = useCards(18);
+  } = useCards(cardsNumber);
   const { getEndDate, calculateTime } = useTime();
   const [finished, setFinished] = useState(false);
 
@@ -36,6 +37,7 @@ export const MainPage = () => {
 
   return (
     <Container>
+      <Link to="/">Home</Link>
       <StyledBoard>
         {cards.map((card) => (
           <Card

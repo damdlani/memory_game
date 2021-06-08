@@ -1,4 +1,4 @@
-//test if colors are different every time
+//TODO: test if colors are different every time
 
 export const useColors = () => {
   const forbiddenColors = [
