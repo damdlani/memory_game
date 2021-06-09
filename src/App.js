@@ -16,16 +16,16 @@ function App() {
       <div>
 
         <Switch>
-          <Route path="/easy">
+          <Route path="/memory_game/easy">
             <MainPage cardsNumber={easy} />
           </Route>
-          <Route path="/medium">
+          <Route path="/memory_game/medium">
             <MainPage cardsNumber={medium} />
           </Route>
-          <Route path="/hard">
+          <Route path="/memory_game/hard">
             <MainPage cardsNumber={hard} />
           </Route>
-          <Route path="/">
+          <Route path="/memory_game">
             <HomePage />
           </Route>
         </Switch>

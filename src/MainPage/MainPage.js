@@ -34,7 +34,7 @@ export const MainPage = ({ cardsNumber }) => {
   return (
     <Container>
       <Nav>
-        <StyledLink to="/">Home</StyledLink>
+        <StyledLink to="/memory_game">Home</StyledLink>
       </Nav>
 
       <StyledBoard>
