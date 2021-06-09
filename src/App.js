@@ -1,36 +1,30 @@
 import { MainPage } from "./MainPage/MainPage";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { Switch, Route, HashRouter } from "react-router-dom";
 import { HomePage } from "./HomePage/HomePage";
 import { difficultyLevels } from "./difficultyLevels";
 
 function App() {
-  const {easy, medium, hard} = difficultyLevels;
+  const { easy, medium, hard } = difficultyLevels;
 
   return (
-    <Router>
+    <HashRouter>
       <div>
-
         <Switch>
-          <Route path="/memory_game/easy">
+          <Route path="/easy">
             <MainPage cardsNumber={easy} />
           </Route>
-          <Route path="/memory_game/medium">
+          <Route path="/medium">
             <MainPage cardsNumber={medium} />
           </Route>
-          <Route path="/memory_game/hard">
+          <Route path="/hard">
             <MainPage cardsNumber={hard} />
           </Route>
-          <Route path="/memory_game">
+          <Route path="/">
             <HomePage />
           </Route>
         </Switch>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 

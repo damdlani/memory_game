@@ -8,13 +8,13 @@ export const HomePage = () => {
       <Subtitle>Choose level:</Subtitle>
       <ul>
         <ListItem>
-          <StyledLink to="/memory_game/easy">Easy</StyledLink>
+          <StyledLink to="/easy">Easy</StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink to="/memory_game/medium">Medium</StyledLink>
+          <StyledLink to="/medium">Medium</StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink to="/memory_game/hard">Hard</StyledLink>
+          <StyledLink to="/hard">Hard</StyledLink>
         </ListItem>
       </ul>
     </Container>
